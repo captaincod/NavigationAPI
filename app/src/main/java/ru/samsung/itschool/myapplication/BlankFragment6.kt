@@ -16,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [BlankFragment3.newInstance] factory method to
+ * Use the [BlankFragment6.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BlankFragment3 : Fragment() {
+class BlankFragment6 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,12 +36,9 @@ class BlankFragment3 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        var view:View=inflater.inflate(R.layout.fragment3, container, false)
-        var btn4:Button=view.findViewById(R.id.button4)
-        btn4.setOnClickListener(View.OnClickListener { view -> view.findNavController().navigate(R.id.action_blankFragment3_to_blankFragment6)})
-        var btn4_back:Button=view.findViewById(R.id.button4_back)
-        btn4_back.setOnClickListener(View.OnClickListener { view -> view.findNavController().popBackStack()})
+        var view:View=inflater.inflate(R.layout.fragment6, container, false)
+        var ButtonBack: Button = view.findViewById(R.id.ButtonBack)
+        ButtonBack.setOnClickListener(View.OnClickListener { view -> view.findNavController().popBackStack()})
         // отправка данных обратно вызывающему
         findNavController().previousBackStackEntry?.savedStateHandle?.set("result_from_activity", "ответные данные")
         return view
@@ -54,12 +51,12 @@ class BlankFragment3 : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment BlankFragment3.
+         * @return A new instance of fragment BlankFragment6.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            BlankFragment3().apply {
+            BlankFragment6().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
